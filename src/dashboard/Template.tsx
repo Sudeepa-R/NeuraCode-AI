@@ -445,19 +445,19 @@ const DashboardTemplate = () => {
                 </h1>
               </motion.h1>
               <span>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                style={{
-                  padding: "0",
-                  fontSize: "16px",
-                  border: "none",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                }}
-              >
-                <Button type="primary">Try for free!</Button>
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  style={{
+                    padding: "0",
+                    fontSize: "16px",
+                    border: "none",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Button type="primary">Try for free!</Button>
+                </motion.button>
               </span>
             </span>
           </Col>
@@ -479,6 +479,7 @@ const DashboardTemplate = () => {
                 alignItems: "center",
                 marginTop: "15px",
                 flexDirection: "column",
+                textAlign: "center",
               }}
             >
               <motion.h1
@@ -495,14 +496,7 @@ const DashboardTemplate = () => {
                   </span>{" "}
                 </h1>
               </motion.h1>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div>
                 <span
                   style={{
                     width: "70%",
