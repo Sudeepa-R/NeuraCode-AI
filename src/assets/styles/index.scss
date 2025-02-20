@@ -26,31 +26,35 @@ p {
 }
 
 .ant-btn.css-dev-only-do-not-override-19lec04.ant-btn-primary.ant-btn-color-primary.ant-btn-variant-solid {
-  background-color: #00246b;
-  padding: 17px 15px;
-  font-size: $font-size-small;
-  font-weight: 600;
+  background-color: #00246b !important;
+  padding: 17px 15px !important;
+  font-size: $font-size-small !important;
+  font-weight: 600 !important;
 }
 .ant-btn.css-dev-only-do-not-override-19lec04.ant-btn-default.ant-btn-color-default.ant-btn-variant-outlined {
-  padding: 17px 15px;
-  font-weight: 500;
-  color: $primary-color;
-  font-size: $font-size-medium;
+  padding: 17px 15px !important;
+  font-weight: 500 !important;
+  color: $primary-color !important;
+  font-size: $font-size-medium !important;
   background-color: transparent !important;
-  border: none;
+  border: none !important;
   &:hover {
     background-color: $secondary-color !important;
   }
 }
 .ant-btn.css-dev-only-do-not-override-19lec04.ant-btn-default.ant-btn-color-purple.ant-btn-variant-text {
-  padding: 17px 15px;
-  font-weight: 500;
-  color: $primary-color;
-  font-size: $font-size-medium;
+  padding: 17px 15px !important;
+  font-weight: 500 !important;
+  color: $primary-color !important;
+  font-size: $font-size-medium !important;
   background-color: red !important;
   :hover {
     background-color: red !important;
   }
+}
+
+.ant-menu {
+  border: none !important;
 }
 .ant-menu.ant-menu-root.ant-menu-vertical.ant-menu-light.css-dev-only-do-not-override-19lec04 {
   border: none !important ;
@@ -61,12 +65,18 @@ p {
   background: transparent !important;
 }
 .headerMenus .ant-menu-item.ant-menu-item-only-child{
-  font-size: 20px;
-  color: #fff;
+  font-size: 20px !important;
+  color: #fff !important;
   &:hover{
     color: $primary-color !important;
   }
 }
 .ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child{
-  color:$primary-color ;
+  color:$primary-color !important;
+}
+.ant-btn-variant-solid{
+  background: $primary-color !important;
+}
+.ant-menu-light{
+  background: transparent !important;
 }
