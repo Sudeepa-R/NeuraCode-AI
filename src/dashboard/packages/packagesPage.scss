@@ -1,0 +1,15 @@
+@use "../../assets/styles/index.scss" as *;
+.packagesPage {
+  background: url(../../assets/packagesbg.png) no-repeat center center;
+  height: 102vh;
+  background-size: cover;
+  width: 100%;
+}
+.packagesfirstpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(260deg,$secondary-color, #fff);
+//   background: linear-gradient(260deg,$third-color, #fff);
+}
