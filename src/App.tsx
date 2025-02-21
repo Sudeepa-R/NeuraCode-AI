@@ -1,10 +1,13 @@
+import React from "react";
 import "./App.css";
-import Dashboard from "./dashboard";
+import AppRoutes from "./shared-components/router/router";
 
 function App() {
   return (
     <>
-      <Dashboard />
+      <React.StrictMode>
+        <AppRoutes />
+      </React.StrictMode>
     </>
   );
 }
