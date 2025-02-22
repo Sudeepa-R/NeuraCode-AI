@@ -69,6 +69,7 @@ p {
   color: #fff !important;
   &:hover{
     color: $primary-color !important;
+    background-color: #CADCFC !important  ;
   }
 }
 .ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child{
@@ -79,4 +80,10 @@ p {
 }
 .ant-menu-light{
   background: transparent !important;
+}
+.ant-drawer .ant-drawer-body{
+  padding: 5px !important;
+}
+.ant-drawer-content-wrapper{
+  width: 150px !important;
 }

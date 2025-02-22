@@ -37,38 +37,51 @@
   color: $primary-color;
 }
 
-.mobileMenu{
+.mobileMenu {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   min-height: 210vh !important;
 }
-.mobileMenuVisible{
+.mobileMenuVisible {
   display: none;
   position: absolute;
   right: 0;
 }
 
-.buttonsClass{
+.buttonsClass {
   margin-right: 20px;
   width: 50%;
   display: flex;
   justify-content: flex-end;
 }
 
-
+.mobileViewButton.ant-btn.css-dev-only-do-not-override-19lec04.ant-btn-default.ant-btn-color-default.ant-btn-variant-outlined {
+  background-color: $primary-color !important;
+  color: #fff !important;
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+.pageNotFoundImage{
+  width:60%;
+}
 
 @media screen and (max-width: 768px) {
-  .headerNav{
+  .headerNav {
     display: none;
   }
-  .buttonsClass{
+  .buttonsClass {
     display: none;
   }
 
-  .mobileMenuVisible{
+  .mobileMenuVisible {
     display: flex;
+  }
+
+  .pageNotFoundImage{
+    width: 650px;
   }
 }
 

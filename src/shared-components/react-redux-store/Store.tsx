@@ -2,15 +2,19 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const neuracodeaiSlice = createSlice({
   name: "neuracodeai",
-  initialState: { activepageKey: "home" },
+  initialState: { activepageKey: "home", mobileMenuViewActive: false },
   reducers: {
     SetActivePageKey: (state, action) => {
       state.activepageKey = action.payload;
     },
+    SetmobileMenuViewActive: (state, action) => {
+      state.mobileMenuViewActive = action.payload;
+    },
   },
 });
 
-export const { SetActivePageKey } = neuracodeaiSlice.actions;
+export const { SetActivePageKey, SetmobileMenuViewActive } =
+  neuracodeaiSlice.actions;
 
 const store = configureStore({
   reducer: {

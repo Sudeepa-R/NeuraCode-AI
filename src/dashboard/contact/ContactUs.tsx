@@ -134,7 +134,7 @@ const ContactUsPage = () => {
                       }}
                     />{" "}
                     <h5 style={{ fontWeight: "500" }}>
-                      support@neuraocodeai.in
+                      support@neuraocodeai.io
                     </h5>
                   </span>
                   <span
