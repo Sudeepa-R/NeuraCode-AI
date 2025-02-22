@@ -1,0 +1,32 @@
+@use "../../assets/styles/index.scss" as *;
+.ContectUs {
+  //   background: rgb(10, 10, 43);
+  background: $secondary-color;
+  height: 70vh;
+  background-size: cover;
+  width: 100%;
+}
+.contactfirstpage {
+  display: flex;
+  justify-content: center;
+  //   align-items: center;
+  //   height: 100vh;
+  //   background: linear-gradient(260deg,$secondary-color, #fff);
+  //   background: linear-gradient(260deg,$third-color, #fff);
+}
+.formFirstRow {
+  display: flex;
+  // flex-wrap: wrap;
+}
+.mobileView {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+@media screen  and (max-width: 768px){
+  .mobileView{
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+}

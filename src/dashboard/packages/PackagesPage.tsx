@@ -92,8 +92,8 @@ const PackagesPage = () => {
 
               <p style={{ color: "black" }}>
                 {" "}
-                Seamlessly transform code across languages with our powerful
-                converter.
+                Effortlessly convert and manage code across multiple languages
+                with our versatile package solutions.
               </p>
             </div>
             <Col
@@ -185,9 +185,9 @@ const PackagesPage = () => {
                             border: "none",
                             borderRadius: "5px",
                             cursor: "pointer",
-                            position:'absolute',
-                            bottom:"20px",
-                            left:"30%"
+                            position: "absolute",
+                            bottom: "20px",
+                            left: "30%",
                           }}
                         >
                           <Button
