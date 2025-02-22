@@ -1,11 +1,12 @@
-import { Button, Menu } from "antd";
+import { Button, Menu, Drawer } from "antd";
 import "./TemplatesStyles.scss";
 import { motion } from "framer-motion";
-import {  useState } from "react";
+import { useState } from "react";
 import logo from "../assets/final-logo-removebg-preview.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
 import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   { key: "home", label: "Home", navigate: "/" },
@@ -16,7 +17,7 @@ const items = [
 const TemplateHeader = (props: any) => {
   const [collapsed, Setcollapsed] = useState(false);
   const [current, setCurrent] = useState("home");
-
+  const navigate = useNavigate();
   const handleClick = (key: string, navigateTo: string) => {
     setCurrent(key);
     props.SetActivePageKey(key);
@@ -89,33 +90,70 @@ const TemplateHeader = (props: any) => {
           <div
             className="mobileMenu"
             style={{
-              backgroundColor: `${collapsed ? "#0000007d" : "transparent"}`,
+              backgroundColor: `${collapsed ? "" : "transparent"}`,
             }}
           >
             <span>
               <Button
                 type="text"
-                icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                icon={collapsed ? "" : <MenuFoldOutlined />}
                 onClick={() => Setcollapsed(!collapsed)}
                 style={{
                   fontSize: "32px",
                   width: 140,
                   height: 64,
-                  marginTop: `${collapsed ? "130px" : ""}`,
+                  // marginTop: `${collapsed ? "130px" : ""}`,
                   color: `${collapsed ? "#fff" : "#000000"}`,
                 }}
               />
-              <Menu
-                className="headerMenus"
-                style={{ display: `${collapsed ? "" : "none"}` }}
-                defaultSelectedKeys={[current]}
-                defaultOpenKeys={[current]}
-                mode="inline"
-                items={items}
-                onClick={(data) => {
-                  handleNavigateFunction(data.key);
+
+              <Drawer
+                style={{
+                  width: "150px",
+                  position: "absolute",
+                  right: 0,
+                  backgroundColor: "#0000007d",
                 }}
-              />
+                closeIcon={<div></div>}
+                title={
+                  <span
+                    onClick={() => {
+                      Setcollapsed(false);
+                    }}
+                    style={{
+                      fontSize: "30px",
+                      color: "#fff",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <MenuUnfoldOutlined />
+                  </span>
+                }
+                onClose={() => {
+                  Setcollapsed(false);
+                }}
+                open={collapsed}
+              >
+                <Menu
+                  className="headerMenus"
+                  style={{ display: `${collapsed ? "" : "none"}` }}
+                  defaultSelectedKeys={[current]}
+                  defaultOpenKeys={[current]}
+                  mode="inline"
+                  items={items}
+                  onClick={(data) => {
+                    handleNavigateFunction(data.key);
+                  }}
+                />
+                <Button
+                  style={{ background: "#fff" }}
+                  className="mobileViewButton ms-4"
+                  variant="text"
+                  onClick={()=>{navigate("/login")}}
+                >
+                  <span> Log In</span>
+                </Button>
+              </Drawer>
             </span>
           </div>
         </span>

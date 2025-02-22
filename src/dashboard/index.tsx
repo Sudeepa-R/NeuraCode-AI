@@ -20,6 +20,9 @@ const Dashboard = (props: any) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     SetCurrentPage(props.activepageKey);
+    if (props.activepageKey === "login") {
+      console.log(11111111111, props.activepageKey);
+    }
   }, [props.activepageKey]);
 
   // useEffect(() => {
@@ -54,7 +57,6 @@ const Dashboard = (props: any) => {
     </>
   );
 };
-
 
 const mapStateToProps = (state: any) => ({
   activepageKey: state.neuracodeai.activepageKey,
