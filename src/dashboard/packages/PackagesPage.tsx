@@ -186,7 +186,7 @@ const PackagesPage = () => {
                             borderRadius: "5px",
                             cursor: "pointer",
                             position: "absolute",
-                            bottom: "20px",
+                            bottom: "15px",
                             left: "30%",
                           }}
                         >
