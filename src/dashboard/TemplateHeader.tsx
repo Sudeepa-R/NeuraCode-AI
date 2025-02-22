@@ -25,6 +25,7 @@ const TemplateHeader = (props: any) => {
 
   const handleNavigateFunction = (key: string) => {
     props.SetActivePageKey(key);
+    Setcollapsed(false);
   };
 
   return (

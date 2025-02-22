@@ -218,10 +218,11 @@ const ContactUsPage = () => {
                         validateDebounce={1000}
                         rules={[{ max: 3 }]}
                       >
-                        <Input
+                        {/* <Input
                           style={{ height: "50px" }}
                           placeholder="Message"
-                        />
+                        /> */}
+                         <Input.TextArea  placeholder="Message"  rows={4}  />
                       </Form.Item>
                     </div>
                     <div style={{display:'flex', justifyContent:'center'}}>
