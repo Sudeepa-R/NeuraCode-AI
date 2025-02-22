@@ -10,6 +10,8 @@ import {
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { MenuProps } from "antd";
+import { connect } from "react-redux";
+import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -23,7 +25,7 @@ const socialLinks = [
 
 const items: MenuItem[] = [
   {
-    key: "Home",
+    key: "home",
     label: "Home",
   },
   {
@@ -31,31 +33,20 @@ const items: MenuItem[] = [
     label: "Packages",
   },
   {
-    key: "contactUs",
+    key: "contact",
     label: "Contact US",
   },
 ];
 
-const DashboardFooter = () => {
+const DashboardFooter = (props: any) => {
   const onClick: MenuProps["onClick"] = (e: any) => {
-    console.log("click", e);
+    props.SetActivePageKey(e.key);
   };
-  const [acvtiveSection, SetacvtiveSection] = useState("home");
-  useEffect(() => {
-    const data = localStorage.getItem("acvtiveSection");
-    SetacvtiveSection(data || "");
-    console.log(acvtiveSection);
-  }, [localStorage.getItem("acvtiveSection")]);
+
   return (
     <>
       <Row style={{ padding: "30px" }} className="templateFooter">
-        <Col
-          xs={24}
-          sm={24}
-          md={12}
-          lg={6}
-          
-        >
+        <Col xs={24} sm={24} md={12} lg={6}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <strong style={{ fontSize: "1.75rem" }}>
               <img
@@ -138,4 +129,12 @@ const DashboardFooter = () => {
   );
 };
 
-export default DashboardFooter;
+const mapStateToProps = (state: any) => ({
+  activepageKey: state.neuracodeai.activepageKey,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+  SetActivePageKey: (data: string) => dispatch(SetActivePageKey(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardFooter);

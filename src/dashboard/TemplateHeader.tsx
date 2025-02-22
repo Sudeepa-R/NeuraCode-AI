@@ -1,22 +1,30 @@
 import { Button, Menu } from "antd";
 import "./TemplatesStyles.scss";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import {  useState } from "react";
 import logo from "../assets/final-logo-removebg-preview.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { connect } from "react-redux";
+import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
 
 const items = [
-  { key: "home", label: "Home" },
-  { key: "packages", label: "Packages" },
-  { key: "contact", label: "Contact Us" },
+  { key: "home", label: "Home", navigate: "/" },
+  { key: "packages", label: "Packages", navigate: "/packages" },
+  { key: "contact", label: "Contact Us", navigate: "/contactUs" },
 ];
 
 const TemplateHeader = (props: any) => {
   const [collapsed, Setcollapsed] = useState(false);
   const [current, setCurrent] = useState("home");
 
-  const handleClick = (key: string) => {
+  const handleClick = (key: string, navigateTo: string) => {
     setCurrent(key);
+    props.SetActivePageKey(key);
+    localStorage.setItem("activePage", navigateTo);
+  };
+
+  const handleNavigateFunction = (key: string) => {
+    props.SetActivePageKey(key);
   };
 
   return (
@@ -31,7 +39,7 @@ const TemplateHeader = (props: any) => {
           {items.map((item) => (
             <span
               key={item.key}
-              onClick={() => handleClick(item.key)}
+              onClick={() => handleClick(item.key, item.navigate)}
               className="headerNavSpan"
               style={{
                 position: "relative",
@@ -99,10 +107,13 @@ const TemplateHeader = (props: any) => {
               <Menu
                 className="headerMenus"
                 style={{ display: `${collapsed ? "" : "none"}` }}
-                defaultSelectedKeys={["home"]}
-                defaultOpenKeys={["home"]}
+                defaultSelectedKeys={[current]}
+                defaultOpenKeys={[current]}
                 mode="inline"
                 items={items}
+                onClick={(data) => {
+                  handleNavigateFunction(data.key);
+                }}
               />
             </span>
           </div>
@@ -112,4 +123,12 @@ const TemplateHeader = (props: any) => {
   );
 };
 
-export default TemplateHeader;
+const mapStateToProps = (state: any) => ({
+  activepageKey: state.neuracodeai.activepageKey,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+  SetActivePageKey: (data: string) => dispatch(SetActivePageKey(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TemplateHeader);
