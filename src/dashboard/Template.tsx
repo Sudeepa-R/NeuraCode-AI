@@ -15,6 +15,8 @@ import reactImg from "../assets/ProgrammingLanguages/react.png";
 import scss from "../assets/ProgrammingLanguages/scss.png";
 import sqlserver from "../assets/ProgrammingLanguages/sqlserver.png";
 import manymore from "../assets/ProgrammingLanguages/manymore.png";
+import { connect } from "react-redux";
+import { SetmobileMenuViewActive } from "../shared-components/react-redux-store/Store";
 
 const DashboardTemplate = () => {
   const socialLinks = [
@@ -556,4 +558,12 @@ const DashboardTemplate = () => {
   );
 };
 
-export default DashboardTemplate;
+const mapStateToProps = (state: any) => ({
+  mobileMenuViewActive: state.neuracodeai.mobileMenuViewActive,
+});
+
+const mapDispatchToProps = (dispatch: any) => ({
+  SetmobileMenuViewActive: (data: boolean) => dispatch(SetmobileMenuViewActive(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardTemplate);
