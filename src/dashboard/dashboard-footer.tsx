@@ -8,7 +8,6 @@ import {
   FacebookOutlined,
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import type { MenuProps } from "antd";
 import { connect } from "react-redux";
 import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
