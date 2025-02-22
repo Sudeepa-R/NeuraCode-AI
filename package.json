@@ -7,14 +7,18 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rimraf dist"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
     "antd": "^5.24.1",
     "framer-motion": "^12.4.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.2.0"
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.2.0",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

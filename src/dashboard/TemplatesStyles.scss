@@ -14,15 +14,15 @@
 .templateNav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: space-between !important;
+  width: 60%;
 }
 .headerNav {
   display: flex;
   align-items: center;
   font-size: 1.35rem;
-  justify-content: space-between;
-  width: 50%;
+  // justify-content: center;
+  width: 75% !important;
 }
 .headerNavMotion {
   position: absolute;
@@ -49,6 +49,15 @@
   position: absolute;
   right: 0;
 }
+
+.buttonsClass{
+  margin-right: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 
 @media screen and (max-width: 768px) {
   .headerNav{
