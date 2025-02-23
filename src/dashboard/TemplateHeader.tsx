@@ -16,7 +16,7 @@ const items = [
 
 const TemplateHeader = (props: any) => {
   const [collapsed, Setcollapsed] = useState(false);
-  const [current, setCurrent] = useState("home");
+  const [current, setCurrent] = useState(props.activepageKey);
   const navigate = useNavigate();
   const handleClick = (key: string, navigateTo: string) => {
     setCurrent(key);
@@ -147,7 +147,7 @@ const TemplateHeader = (props: any) => {
                 />
                 <Button
                   style={{ background: "#fff" }}
-                  className="mobileViewButton ms-4"
+                  className="mobileViewButton ms-4 mt-2"
                   variant="text"
                   onClick={()=>{navigate("/login")}}
                 >

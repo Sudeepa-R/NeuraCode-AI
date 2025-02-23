@@ -20,6 +20,7 @@ const Dashboard = (props: any) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     SetCurrentPage(props.activepageKey);
+    console.log(2222222222,props.activepageKey);
     if (props.activepageKey === "login") {
       console.log(11111111111, props.activepageKey);
     }

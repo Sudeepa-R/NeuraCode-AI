@@ -7,7 +7,7 @@ const PageNotFound = () => {
     const navigate=useNavigate();
   return (
     <>
-      <div>
+      <div style={{height:"100vh"}}>
         <Row
           style={{
            
@@ -25,6 +25,7 @@ const PageNotFound = () => {
               alignItems: "center",
               flexDirection: "column",
               flexWrap: "wrap",
+              background:"#F7F9FB"
             }}
             xs={24}
             sm={24}
@@ -32,7 +33,7 @@ const PageNotFound = () => {
             lg={24}
           >
             <div style={{width:"100%", display:'flex', justifyContent:'center'}}>
-              <img className="pageNotFoundImage" src={notFoundImg} alt="" style={{ height:"100vh"}} />
+              <img className="pageNotFoundImage" src={notFoundImg} alt=""/>
             </div>
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -52,9 +53,11 @@ const PageNotFound = () => {
                 className="tryButton"
                 style={{ backgroundColor: "#cadcfc" }}
                 variant="filled"
-                onClick={()=>{navigate("/home")}}
+                onClick={()=>{
+
+                  navigate("/")}}
               >
-                Return to Home
+                Return to privious page
               </Button>
             </motion.button>
           </Col>
