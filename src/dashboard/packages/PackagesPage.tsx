@@ -2,8 +2,10 @@ import { Button, Col, Row, Card, Badge } from "antd";
 import { motion } from "framer-motion";
 import "./packagesPage.scss";
 import cardData from "./CardData";
+import { useNavigate } from "react-router-dom";
 
 const PackagesPage = () => {
+  const navigate=useNavigate();
   return (
     <>
       <div>
@@ -56,7 +58,7 @@ const PackagesPage = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Button type="primary">Try for free!</Button>
+                  <Button onClick={()=>{navigate('*')}} type="primary">Try for free!</Button>
                 </motion.button>
               </Col>
             </Row>
@@ -194,6 +196,7 @@ const PackagesPage = () => {
                             className="tryButton"
                             style={{ backgroundColor: "#cadcfc" }}
                             variant="filled"
+                            onClick={()=>{navigate('*')}}
                           >
                             Buy Now
                           </Button>

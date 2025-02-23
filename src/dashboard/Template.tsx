@@ -17,8 +17,10 @@ import sqlserver from "../assets/ProgrammingLanguages/sqlserver.png";
 import manymore from "../assets/ProgrammingLanguages/manymore.png";
 import { connect } from "react-redux";
 import { SetmobileMenuViewActive } from "../shared-components/react-redux-store/Store";
+import { useNavigate } from "react-router-dom";
 
 const DashboardTemplate = () => {
+  const navigate=useNavigate();
   const socialLinks = [
     {
       id: 1,
@@ -170,6 +172,7 @@ const DashboardTemplate = () => {
                 className="tryButton"
                 style={{ backgroundColor: "#cadcfc" }}
                 variant="filled"
+                onClick={()=>{navigate('*')}}
               >
                 Try for free!
               </Button>
@@ -458,7 +461,7 @@ const DashboardTemplate = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Button type="primary">Try for free!</Button>
+                  <Button onClick={()=>{navigate('*')}} type="primary">Try for free!</Button>
                 </motion.button>
               </span>
             </span>

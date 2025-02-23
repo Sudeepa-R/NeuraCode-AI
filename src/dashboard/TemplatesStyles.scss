@@ -66,6 +66,7 @@
 }
 .pageNotFoundImage{
   width:60%;
+  height: 90vh;
 }
 
 @media screen and (max-width: 768px) {
@@ -81,7 +82,9 @@
   }
 
   .pageNotFoundImage{
-    width: 650px;
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 20px;
   }
 }
 
