@@ -1,9 +1,11 @@
 import { Button, Col, Row, Form, Input } from "antd";
 import { motion } from "framer-motion";
 import { MailFilled, PhoneFilled } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 import "./ContectUs.scss";
 
 const ContactUsPage = () => {
+  const navigate=useNavigate();
   return (
     <>
       <div>
@@ -56,7 +58,7 @@ const ContactUsPage = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Button type="primary">Try NeuraCode AI</Button>
+                  <Button onClick={()=>{navigate('*')}} type="primary">Try NeuraCode AI</Button>
                 </motion.button>
               </Col>
             </Row>
