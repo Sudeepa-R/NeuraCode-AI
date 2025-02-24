@@ -60,7 +60,7 @@ const Login = () => {
           <Form className="loginForm" style={{ width: "250px" }}>
             <Form.Item
               name="loginEmail"
-              initialValue={"Enter your Email"}
+              // initialValue={"Enter your Email"}
               label="Email"
               style={{ color: "#fff" }}
               rules={[

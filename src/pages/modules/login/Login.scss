@@ -32,3 +32,9 @@ background: #292929 !important;
 .ant-input-affix-wrapper.ant-input-affix-wrapper-focused.css-dev-only-do-not-override-19lec04.ant-input-outlined.socialMediaCard{
     background-color: #292929 !important;
 }
+.socialMediaCard input::placeholder {
+    color: #fff !important;
+    opacity: 1;
+  }
+  
+  
