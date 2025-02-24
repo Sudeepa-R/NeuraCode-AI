@@ -1,0 +1,34 @@
+.socialMediaCard {
+  width: 250px;
+  background: #292929;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &.ant-card .ant-card-body {
+    padding: 7px !important;
+  }
+
+  &:hover {
+    background-color: #424242;
+  }
+}
+
+.loginForm .ant-col.ant-form-item-label.css-dev-only-do-not-override-19lec04{
+position: absolute;
+background: #292929 !important;
+}
+
+.ant-input.css-dev-only-do-not-override-19lec04.ant-input-outlined.ant-input-status-error.socialMediaCard{
+    background: #292929 !important;
+    color: #fff !important;
+}
+.ant-input-affix-wrapper.css-dev-only-do-not-override-19lec04.ant-input-outlined.ant-input-status-error.socialMediaCard{
+    background-color: #292929 !important;
+    color: #fff;
+}
+.ant-input-affix-wrapper.ant-input-affix-wrapper-focused.css-dev-only-do-not-override-19lec04.ant-input-outlined.socialMediaCard{
+    background-color: #292929 !important;
+}
