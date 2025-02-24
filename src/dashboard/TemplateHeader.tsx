@@ -68,7 +68,13 @@ const TemplateHeader = (props: any) => {
           ))}
         </nav>
         <div className="buttonsClass">
-          <Button className="mx-2" variant="text">
+          <Button
+            onClick={() => {
+              navigate("/login");
+            }}
+            className="mx-2"
+            variant="text"
+          >
             Log In
           </Button>
 
@@ -149,7 +155,10 @@ const TemplateHeader = (props: any) => {
                   style={{ background: "#fff" }}
                   className="mobileViewButton ms-4 mt-2"
                   variant="text"
-                  onClick={()=>{navigate("/login")}}
+                  onClick={() => {
+                    props.SetActivePageKey("login");
+                    navigate("/login");
+                  }}
                 >
                   <span> Log In</span>
                 </Button>
