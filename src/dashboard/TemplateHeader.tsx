@@ -34,7 +34,7 @@ const TemplateHeader = (props: any) => {
       <span
         style={{ fontWeight: "800", fontSize: "2rem", fontFamily: "Roboto" }}
       >
-        <img src={logo} alt="" style={{ width: "50%", marginLeft: "10px" }} />
+        <img src={logo} alt="" onClick={()=>{props.SetActivePageKey("home")}} style={{ width: "50%", marginLeft: "10px", cursor:"pointer" }} />
       </span>
       <div className="templateNav">
         <nav className="headerNav">
