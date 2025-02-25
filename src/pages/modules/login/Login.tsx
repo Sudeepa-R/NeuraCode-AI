@@ -12,6 +12,10 @@ const Login = (props: any) => {
   const navigate = useNavigate();
   const [pageType, SetPageType] = useState(props.activepageKey);
   useEffect(() => {
+   navigate('/login')
+   props.SetActivePageKey('login')
+  }, []);
+  useEffect(() => {
     console.log(props.activepageKey);
     SetPageType(props.activepageKey);
   }, [props.activepageKey]);
@@ -114,7 +118,7 @@ const Login = (props: any) => {
               name="loginEmail"
               // initialValue={"Enter your Email"}
               label="Email"
-              style={{ color: "#fff" }}
+              style={{ color: "#fff", display:"block" }}
               rules={[
                 {
                   type: "email",
