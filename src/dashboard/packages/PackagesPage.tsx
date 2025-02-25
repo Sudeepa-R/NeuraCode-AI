@@ -121,8 +121,8 @@ const PackagesPage = () => {
                 }}
               >
                 {cardData &&
-                  cardData.map((data, _) => (
-                    <Badge.Ribbon text={data.badge}>
+                  cardData.map((data, index) => (
+                    <Badge.Ribbon text={data.badge} key={index}>
                       <Card
                         hoverable
                         title={
@@ -161,8 +161,9 @@ const PackagesPage = () => {
                             flexDirection: "column",
                           }}
                         >
-                          {data.features.map((item, _) => (
+                          {data.features.map((item, index) => (
                             <span
+                            key={index}
                               style={{
                                 fontSize: "17px",
                                 fontWeight: "500",
