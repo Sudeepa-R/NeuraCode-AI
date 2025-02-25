@@ -9,9 +9,9 @@ import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
 import { useNavigate } from "react-router-dom";
 
 const items = [
-  { key: "home", label: "Home", navigate: "/" },
+  { key: "home", label: "Home", navigate: "/home" },
   { key: "packages", label: "Packages", navigate: "/packages" },
-  { key: "contact", label: "Contact Us", navigate: "/contactUs" },
+  { key: "contactUs", label: "Contact Us", navigate: "/contactUs" },
 ];
 
 const TemplateHeader = (props: any) => {
@@ -19,12 +19,15 @@ const TemplateHeader = (props: any) => {
   const [current, setCurrent] = useState(props.activepageKey);
   const navigate = useNavigate();
   const handleClick = (key: string, navigateTo: string) => {
+    window.scrollTo(0, 0);
+    navigate(navigateTo);
     setCurrent(key);
     props.SetActivePageKey(key);
     localStorage.setItem("activePage", navigateTo);
   };
 
   const handleNavigateFunction = (key: string) => {
+    navigate(key);
     props.SetActivePageKey(key);
     Setcollapsed(false);
   };
@@ -34,7 +37,14 @@ const TemplateHeader = (props: any) => {
       <span
         style={{ fontWeight: "800", fontSize: "2rem", fontFamily: "Roboto" }}
       >
-        <img src={logo} alt="" onClick={()=>{props.SetActivePageKey("home")}} style={{ width: "50%", marginLeft: "10px", cursor:"pointer" }} />
+        <img
+          src={logo}
+          alt=""
+          onClick={() => {
+            props.SetActivePageKey("home");
+          }}
+          style={{ width: "50%", marginLeft: "10px", cursor: "pointer" }}
+        />
       </span>
       <div className="templateNav">
         <nav className="headerNav">
@@ -56,12 +66,10 @@ const TemplateHeader = (props: any) => {
                 <motion.div
                   layoutId="underline"
                   className="headerNavMotion"
-                  style={{ marginTop: "100px" }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 20,
-                  }}
+                  // style={{ marginTop: "100px" }}
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
                 />
               )}
             </span>
@@ -70,7 +78,7 @@ const TemplateHeader = (props: any) => {
         <div className="buttonsClass">
           <Button
             onClick={() => {
-              props.SetActivePageKey("login")
+              props.SetActivePageKey("login");
               navigate("/login");
             }}
             className="mx-2"
