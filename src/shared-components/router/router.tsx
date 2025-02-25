@@ -13,6 +13,7 @@ const AppRoutes = () => {
       <Route path="/contactUs" element={<ContactIndex />} />
       <Route path="*" element={<PageNotFound />} />
       <Route path="/login" element={<Login/>} />
+      <Route path="/register" element={<Login/>} />
 
     </Routes>
   );

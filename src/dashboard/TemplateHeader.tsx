@@ -70,6 +70,7 @@ const TemplateHeader = (props: any) => {
         <div className="buttonsClass">
           <Button
             onClick={() => {
+              props.SetActivePageKey("login")
               navigate("/login");
             }}
             className="mx-2"
