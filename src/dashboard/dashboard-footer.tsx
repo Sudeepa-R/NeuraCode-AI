@@ -20,7 +20,7 @@ const socialLinks = [
   { id: 2, icon: <GithubOutlined />, link: "https://github.com" },
   { id: 3, icon: <InstagramOutlined />, link: "https://instagram.com" },
   { id: 4, icon: <LinkedinOutlined />, link: "https://linkedin.com" },
-  { id: 4, icon: <YoutubeOutlined />, link: "https://youtube.com" },
+  { id: 5, icon: <YoutubeOutlined />, link: "https://youtube.com" },
 ];
 
 const items = [
@@ -86,7 +86,7 @@ const DashboardFooter = (props: any) => {
             <strong style={{ fontSize: "1.75rem" }}>Follow Us</strong>
             <div style={{ display: "flex", margin: "2px" }}>
               {socialLinks.map(({ id, icon }) => (
-                <span style={{ margin: "7px", cursor: "pointer" }}>
+                <span key={id} style={{ margin: "7px", cursor: "pointer" }}>
                   <motion.h3
                     key={id}
                     whileHover={{ scale: 1.2, y: -5, color: "#00246b" }}
