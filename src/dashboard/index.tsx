@@ -6,8 +6,10 @@ import { connect } from "react-redux";
 import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
 import PackagesPage from "./packages/PackagesPage";
 import ContactUsPage from "./contact/ContactUs";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = (props: any) => {
+  const navigate=useNavigate()
   const [bgColor, setBgColor] = useState("transparent");
   const [currentPage, SetCurrentPage] = useState(props.activepageKey);
 
@@ -21,8 +23,8 @@ const Dashboard = (props: any) => {
     window.scrollTo(0, 0);
     SetCurrentPage(props.activepageKey);
     console.log(2222222222,props.activepageKey);
-    if (props.activepageKey === "login") {
-      console.log(11111111111, props.activepageKey);
+    if (!['home', 'contact','packages'].includes(props.activepageKey)) {
+      navigate(`/${props.activepageKey}`)
     }
   }, [props.activepageKey]);
 
