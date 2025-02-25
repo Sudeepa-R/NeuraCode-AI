@@ -11,8 +11,9 @@ import { motion } from "framer-motion";
 import type { MenuProps } from "antd";
 import { connect } from "react-redux";
 import { SetActivePageKey } from "../shared-components/react-redux-store/Store";
+import { useNavigate } from "react-router-dom";
 
-type MenuItem = Required<MenuProps>["items"][number];
+// type MenuItem = Required<MenuProps>["items"][number];
 
 const socialLinks = [
   { id: 1, icon: <FacebookOutlined />, link: "https://facebook.com" },
@@ -22,23 +23,16 @@ const socialLinks = [
   { id: 4, icon: <YoutubeOutlined />, link: "https://youtube.com" },
 ];
 
-const items: MenuItem[] = [
-  {
-    key: "home",
-    label: "Home",
-  },
-  {
-    key: "packages",
-    label: "Packages",
-  },
-  {
-    key: "contact",
-    label: "Contact US",
-  },
+const items = [
+  { key: "home", label: "Home", navigate: "/home" },
+  { key: "packages", label: "Packages", navigate: "/packages" },
+  { key: "contactUs", label: "Contact Us", navigate: "/contactUs" },
 ];
 
 const DashboardFooter = (props: any) => {
+  const navigate = useNavigate();
   const onClick: MenuProps["onClick"] = (e: any) => {
+    navigate(e.key);
     props.SetActivePageKey(e.key);
   };
 
