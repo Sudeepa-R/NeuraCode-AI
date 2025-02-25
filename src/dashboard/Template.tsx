@@ -49,68 +49,68 @@ const DashboardTemplate = () => {
     },
     { id: 6, icon: "https://www.codeconvert.ai/lang_logos/c.svg", lable: "C" },
     {
-      id: 6,
+      id: 7,
       icon: "https://www.codeconvert.ai/lang_logos/csharp.svg",
       lable: "C#",
     },
     {
-      id: 6,
+      id: 8,
       icon: "https://www.codeconvert.ai/lang_logos/typescript.svg",
       lable: "TypeScript",
     },
     {
-      id: 6,
+      id: 9,
       icon: "https://www.codeconvert.ai/lang_logos/perl.svg",
       lable: "Perl",
     },
     {
-      id: 6,
+      id: 10,
       icon: "https://www.codeconvert.ai/lang_logos/vb.net.svg",
       lable: "VB.Net",
     },
     {
-      id: 6,
+      id: 11,
       icon: "https://www.codeconvert.ai/lang_logos/ruby.svg",
       lable: "Ruby",
     },
     {
-      id: 6,
+      id: 12,
       icon: "https://www.codeconvert.ai/lang_logos/php.svg",
       lable: "Php",
     },
     {
-      id: 6,
+      id: 13,
       icon: "https://www.codeconvert.ai/lang_logos/kotlin.svg",
       lable: "Kotlin",
     },
-    { id: 6, icon: postgre, lable: "PostgreSQL" },
-    { id: 6, icon: css, lable: "CSS " },
-    { id: 6, icon: html, lable: "HTML" },
-    { id: 6, icon: mysql, lable: "MySQL" },
-    { id: 6, icon: reactImg, lable: "ReactJs" },
-    { id: 6, icon: scss, lable: "SCSS" },
-    { id: 6, icon: sqlserver, lable: "Microsoft SQL Server" },
+    { id: 14, icon: postgre, lable: "PostgreSQL" },
+    { id: 15, icon: css, lable: "CSS " },
+    { id: 16, icon: html, lable: "HTML" },
+    { id: 17, icon: mysql, lable: "MySQL" },
+    { id: 18, icon: reactImg, lable: "ReactJs" },
+    { id: 19, icon: scss, lable: "SCSS" },
+    { id: 20, icon: sqlserver, lable: "Microsoft SQL Server" },
     {
-      id: 6,
+      id: 21,
       icon: "https://www.codeconvert.ai/lang_logos/swift.svg",
       lable: "Swift",
     },
     {
-      id: 6,
+      id: 22,
       icon: "https://www.codeconvert.ai/lang_logos/elixir.svg",
       lable: "Elixir",
     },
     {
-      id: 6,
+      id: 23,
       icon: "https://www.codeconvert.ai/lang_logos/erlang.svg",
       lable: "Erlang",
     },
     {
-      id: 6,
+      id: 24,
       icon: "https://www.codeconvert.ai/lang_logos/rust.svg",
       lable: "Rust",
     },
-    { id: 6, icon: manymore, lable: "Many More" },
+    { id: 25, icon: manymore, lable: "Many More" },
   ];
   return (
     <>
@@ -530,7 +530,7 @@ const DashboardTemplate = () => {
               }}
             >
               {socialLinks.map(({ id, icon, lable }) => (
-                <span style={{ margin: "15px", cursor: "pointer" }}>
+                <span key={id} style={{ margin: "15px", cursor: "pointer" }}>
                   <motion.h3
                     key={id}
                     whileHover={{ scale: 1.2, y: -5, color: "#551A8B" }}
