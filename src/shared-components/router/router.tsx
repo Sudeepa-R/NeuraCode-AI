@@ -30,7 +30,7 @@ const AppRoutes = () => {
       <Route element={<LayoutWrapper />}>
         <Route path="/packages" element={<PackagesPage />} />
         <Route path="/contactUs" element={<ContactUsPage />} />
-        <Route index path="/" element={<Template />} />
+        <Route index  element={<Template />} />
         <Route path="/home" element={<Template />} />
       </Route>
     </Routes>
