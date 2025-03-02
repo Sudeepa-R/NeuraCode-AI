@@ -1,4 +1,4 @@
-import { Button, Card, Col, Divider, Input, Row, Form } from "antd";
+import { Button, Card, Col, Divider, Input, Row } from "antd";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/final-logo-removebg-preview.png";
@@ -114,7 +114,7 @@ const Login = (props: any) => {
           <Divider style={{ borderColor: "#A3A3A3", color: "#A3A3A3" }}>
             Or
           </Divider>
-          <Form className="loginForm" style={{ width: "250px" }}>
+          {/* <Form className="loginForm" style={{ width: "250px" }}>
             <Form.Item
               name="loginEmail"
               // initialValue={"Enter your Email"}
@@ -126,15 +126,16 @@ const Login = (props: any) => {
                   message: "The input is not valid E-mail!",
                 },
               ]}
-            >
+            > */}
               <Input
                 allowClear
+                required
                 style={{ padding: "9px", color: "#fff" }}
                 placeholder="Enter your Email"
                 className="socialMediaCard"
               />
-            </Form.Item>
-          </Form>
+            {/* </Form.Item>
+          </Form> */}
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
