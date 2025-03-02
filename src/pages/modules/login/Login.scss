@@ -1,6 +1,6 @@
 .socialMediaCard {
   width: 250px;
-  background: #292929;
+  background: #292929 !important;
   border: none;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
   }
 
   &:hover {
-    background-color: #424242;
+    background-color: #424242 !important;
   }
 }
 
@@ -39,5 +39,7 @@ background: #292929 !important;
 .socialMediaCard .anticon.anticon-close-circle{
   color: #fff !important;
 }
-  
+.ant-input-affix-wrapper.ant-input-affix-wrapper-focused.css-1v613y.ant-input-outlined.socialMediaCard{
+  background-color: #424242 !important;
+}
   
