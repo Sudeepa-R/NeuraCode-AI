@@ -32,6 +32,7 @@ const items = [
 const DashboardFooter = (props: any) => {
   const navigate = useNavigate();
   const onClick: MenuProps["onClick"] = (e: any) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     navigate(e.key);
     props.SetActivePageKey(e.key);
   };

@@ -1,7 +1,7 @@
 import { Button, Menu, Drawer } from "antd";
 import "./TemplatesStyles.scss";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/final-logo-removebg-preview.png";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
@@ -25,6 +25,10 @@ const TemplateHeader = (props: any) => {
     props.SetActivePageKey(key);
     localStorage.setItem("activePage", navigateTo);
   };
+
+  useEffect(() => {
+    setCurrent(props.activepageKey);
+  }, [props.activepageKey]);
 
   const handleNavigateFunction = (key: string) => {
     navigate(key);
