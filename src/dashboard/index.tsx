@@ -22,7 +22,6 @@ const Dashboard = (props: any) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     SetCurrentPage(props.activepageKey);
-    console.log(2222222222,props.activepageKey);
     if (!['home', 'contact','packages'].includes(props.activepageKey)) {
       navigate(`/${props.activepageKey}`)
     }
