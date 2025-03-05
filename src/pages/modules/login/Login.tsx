@@ -16,7 +16,6 @@ const Login = (props: any) => {
    props.SetActivePageKey('login')
   }, []);
   useEffect(() => {
-    console.log(props.activepageKey);
     navigate('/login')
     SetPageType(props.activepageKey);
   }, [props.activepageKey]);
