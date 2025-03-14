@@ -164,7 +164,7 @@ const ContactUsPage = () => {
                     marginTop: "20px",
                   }}
                 >
-                  <Form style={{ width: "100%" }}>
+                  <Form name="contactUs" style={{ width: "100%" }}>
                     <div className="mobileView" >
                       <Form.Item
                         name="name"
