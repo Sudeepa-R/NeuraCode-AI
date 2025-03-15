@@ -118,7 +118,7 @@ const MainHeader = (props: any) => {
         />
       </span>
 
-      <nav className="headerNav">
+      <nav className="headerNav headerNav2">
         {menuItems.map((item) => (
           <span
             key={item.key}

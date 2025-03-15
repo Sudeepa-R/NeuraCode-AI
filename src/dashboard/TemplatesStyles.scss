@@ -79,7 +79,7 @@
   width: 60%;
   height: 90vh;
 }
-.secondHeader{
+.secondHeader {
   display: none;
 }
 
@@ -94,7 +94,7 @@
   .mobileMenuVisible {
     display: flex;
   }
-  .secondHeader{
+  .secondHeader {
     display: flex;
   }
 
@@ -102,6 +102,15 @@
     width: 100%;
     height: 70vh;
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .headerNav2 {
+    display: none !important;
+  }
+  .secondHeader {
+    display: flex;
   }
 }
 
@@ -183,4 +192,3 @@
 .templateFooter {
   background-color: $third-color;
 }
-
