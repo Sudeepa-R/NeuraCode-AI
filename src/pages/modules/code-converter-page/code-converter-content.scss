@@ -5,9 +5,34 @@
   width: 100%;
   margin: 0px !important;
   padding: 0px !important;
-  background: linear-gradient(180deg,  $secondary-color, #fff);
+  background: linear-gradient(180deg, $secondary-color, #fff);
 }
 .codeConverterContentDiv {
-  padding: 10px 50px;
+  padding: 10px 0px;
+  min-height: 100vh;
   // background: linear-gradient(180deg, $primary-color, $secondary-color);
+}
+
+.ant-radio-group-solid {
+  border: none !important;
+}
+.ant-radio-group-solid
+  :where(
+    .css-dev-only-do-not-override-19lec04
+  ).ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  color: #fff;
+  background: rgb(2, 2, 65);
+  border: none !important;
+  &:hover {
+    background: rgb(2, 2, 65);
+  }
+}
+
+.reset.ant-btn.css-dev-only-do-not-override-19lec04.ant-btn-default.ant-btn-color-default.ant-btn-variant-outlined {
+  padding: 17px 15px !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  background-color: #00246b !important;
+  border: none !important;
 }
