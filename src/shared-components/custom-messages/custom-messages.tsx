@@ -2,20 +2,27 @@ import { message } from "antd";
 
 type NoticeType = "info" | "warning" | "error" | "success";
 
-export const openMessagesWithIcon = (msgType: NoticeType, msg:string) => {
+export const openMessagesWithIcon = (
+  
+  msgType: NoticeType,
+  msg: string='',
+  isLoading: boolean
+) => {
   const key = "updatable";
-
-  message.open({
-    key,
-    type: "loading",
-    content: "Loading...",
-  });
-  setTimeout(() => {
-    message.open({
-      key,
-      type: msgType,
-      content: msg,
-      duration: 2,
-    });
-  }, 1000);
+console.log('loading',isLoading)
+  {
+    isLoading
+      ? message.open({
+          key,
+          type: "loading",
+          content: "Loading...",
+          duration:2
+        })
+      : message.open({
+          key,
+          type: msgType,
+          content: msg,
+          duration: 2,
+        });
+  }
 };

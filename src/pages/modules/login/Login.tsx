@@ -9,13 +9,17 @@ import { SetActivePageKey } from "../../../shared-components/react-redux-store/S
 import { useEffect, useState } from "react";
 import NCAApis from "../../../shared-components/apis/NeuracodeAIApis";
 import { OpenNotificationWithIcon } from "../../../shared-components/custom-notification/custom-notification";
+import { openMessagesWithIcon } from "../../../shared-components/custom-messages/custom-messages";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 const { loginUser } = NCAApis;
 
 const Login = (props: any) => {
   const navigate = useNavigate();
   const [pageType, SetPageType] = useState(props.activepageKey);
-  const [userName, SetUserName] = useState("");
+  const [userEmail, SetUserName] = useState("");
   const [password, SetPassword] = useState("null");
+  const [loading, SetLoading] = useState(false);
 
   useEffect(() => {
     // navigate("/login");
@@ -24,17 +28,43 @@ const Login = (props: any) => {
   }, [props.activepageKey]);
 
   const validateUserCredentials = () => {
-    const data = { userName: userName, password: password };
-    loginUser(data)
-      .then((res: any) => {
-        if (res.status === 200) {
-        } else {
-          OpenNotificationWithIcon("error", res?.response?.data.message);
-        }
-      })
-      .catch((err) => {
-        OpenNotificationWithIcon("error", err?.response?.data.message);
-      });
+    SetLoading(true);
+    console.log(2222222222, loading);
+    openMessagesWithIcon("info", "", true);
+    const data = { userEmail: userEmail, password: password };
+    setTimeout(() => {
+      loginUser(data)
+        .then((res: any) => {
+          console.log(11111111111111111111, res);
+          SetLoading(false);
+          if (res.status === 200 || res.status === 201) {
+            console.log(3333333333333, loading);
+            openMessagesWithIcon("success", res?.data.message, loading);
+            const data = res?.data;
+            let d = new Date();
+            d.setTime(d.getTime() + 550000 * 60 * 1000);
+            cookies.set("tokens", res.data.access_token, {
+              path: "/",
+              expires: d,
+              secure: true,
+              sameSite: "strict",
+            });
+            delete data.access_token;
+            const userData = JSON.stringify(data);
+            localStorage.setItem("data", userData);
+            navigate("/codeconverter");
+          } else {
+            OpenNotificationWithIcon("error", res?.response?.data.message);
+          }
+        })
+        .catch((err) => {
+          SetLoading(false);
+          OpenNotificationWithIcon(
+            "error",
+            err?.response?.data.message || "Server Error"
+          );
+        });
+    }, 1000);
   };
 
   return (
@@ -146,7 +176,9 @@ const Login = (props: any) => {
                   className="tryButton"
                   style={{ backgroundColor: "#cadcfc" }}
                   variant="filled"
+                  loading={loading}
                   onClick={() => {
+                    // SetLoading(true)
                     // validateUserCredentials()
                     // navigate("*");
                   }}
