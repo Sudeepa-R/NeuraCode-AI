@@ -1,0 +1,13 @@
+@use "../../../assets/styles/index.scss" as *;
+
+.codeConverterContent {
+  min-height: 150vh;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+  background: linear-gradient(180deg,  $secondary-color, #fff);
+}
+.codeConverterContentDiv {
+  padding: 10px 50px;
+  // background: linear-gradient(180deg, $primary-color, $secondary-color);
+}
