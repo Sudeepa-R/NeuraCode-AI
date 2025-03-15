@@ -8,14 +8,11 @@ import Editor from "@monaco-editor/react";
 import { SunFilled, MoonFilled } from "@ant-design/icons";
 // import { motion } from "framer-motion";
 // import { useNavigate } from "react-router-dom";
-enum LanguagesAllowed {
-  python,
-  java,
-}
+
 const CodeConverterContent = (props: any) => {
   // const navigate = useNavigate();
   const [theme, SetTheme] = useState("lightMode");
-  const [current, setCurrent] = useState(props.activepageKey);
+  // const [current, setCurrent] = useState(props.activepageKey);
   useEffect(() => {
     const activeTheme = localStorage.getItem("theme");
     SetTheme(activeTheme || "lightMode");
