@@ -8,12 +8,22 @@ import DashboardMainPage from "../../dashboard/DashboardMainPage";
 import PackagesPage from "../../dashboard/packages/PackagesPage";
 import ContactUsPage from "../../dashboard/contact/ContactUs";
 import Template from "../../dashboard/Template";
+import CodeConverterIndex from "../../pages/modules/code-converter-page";
+import CodeConverterContent from "../../pages/modules/code-converter-page/code-converter-content";
 
 const LayoutWrapper = () => {
   return (
     <DashboardMainPage>
       <Outlet />
     </DashboardMainPage>
+  );
+};
+
+const CodeConverterPageWrapper = () => {
+  return (
+    <CodeConverterIndex>
+      <Outlet />
+    </CodeConverterIndex>
   );
 };
 
@@ -30,8 +40,12 @@ const AppRoutes = () => {
       <Route element={<LayoutWrapper />}>
         <Route path="/packages" element={<PackagesPage />} />
         <Route path="/contactUs" element={<ContactUsPage />} />
-        <Route index  element={<Template />} />
+        <Route index element={<Template />} />
         <Route path="/home" element={<Template />} />
+      </Route>
+
+      <Route element={<CodeConverterPageWrapper />}>
+        <Route path="/codeconverter" element={<CodeConverterContent />} />
       </Route>
     </Routes>
   );
