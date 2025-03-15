@@ -79,6 +79,9 @@
   width: 60%;
   height: 90vh;
 }
+.secondHeader{
+  display: none;
+}
 
 @media screen and (max-width: 768px) {
   .headerNav {
@@ -89,6 +92,9 @@
   }
 
   .mobileMenuVisible {
+    display: flex;
+  }
+  .secondHeader{
     display: flex;
   }
 
