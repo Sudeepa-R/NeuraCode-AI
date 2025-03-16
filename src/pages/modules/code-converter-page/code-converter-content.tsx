@@ -14,6 +14,7 @@ const CodeConverterContent = (props: any) => {
   const [theme, SetTheme] = useState("lightMode");
   // const [current, setCurrent] = useState(props.activepageKey);
   useEffect(() => {
+    localStorage.setItem("theme", "vs-dark");
     const activeTheme = localStorage.getItem("theme");
     SetTheme(activeTheme || "lightMode");
   }, []);

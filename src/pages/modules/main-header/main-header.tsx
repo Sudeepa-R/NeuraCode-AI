@@ -54,7 +54,7 @@ const MainHeader = (props: any) => {
   const menuItems = [
     { key: "convert-code", label: "Convert Code", navigate: "/codeconverter" },
     { key: "runCode", label: "Run Code", navigate: "*" },
-    { key: "adminSection", label: "Admin Section", navigate: "*" },
+    { key: "adminSettings", label: "Admin Settings", navigate: "*" },
   ];
   // const handleClick = (key: string, navigateTo: string) => {
   //   window.scrollTo(0, 0);
@@ -89,7 +89,7 @@ const MainHeader = (props: any) => {
     const user = localStorage.getItem("data");
     const data = JSON.parse(user || "{}");
     const userName = data?.user?.userName;
-    const email = (data?.user?.userEmail).split("@");
+    const email = data?.user?.userEmail ? (data?.user?.userEmail).split("@"): 'Not found';
     SetuserData({
       userName: userName,
       email: data?.user?.userEmail,
@@ -148,7 +148,7 @@ const MainHeader = (props: any) => {
       </nav>
 
       <div className="profileDropdown" style={{ width: "20%" }}>
-        <Dropdown className="profile" menu={{ items }}>
+        <Dropdown  className="profile" menu={{ items }}>
           <Space style={{ cursor: "pointer" }}>
             <Avatar
               style={{ backgroundColor: "#87d068" }}
@@ -156,7 +156,7 @@ const MainHeader = (props: any) => {
               // size="large"
               icon={<UserOutlined />}
             />
-            <span>{userData.userName || userData.emailName}</span>
+            <span style={{fontSize:"18px"}}>{userData.userName || userData.emailName}</span>
           </Space>
         </Dropdown>
         <span className="secondHeader">
