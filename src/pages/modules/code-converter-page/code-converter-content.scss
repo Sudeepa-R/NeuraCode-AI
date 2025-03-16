@@ -36,3 +36,25 @@
   background-color: #00246b !important;
   border: none !important;
 }
+
+.ant-btn.css-240cud.ant-btn-default.ant-btn-color-default.ant-btn-variant-outlined.reset {
+  padding: 17px 15px !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  background-color: #00246b !important;
+  border: none !important;
+}
+
+.ant-radio-button {
+  border: none !important;
+}
+
+.ant-radio-button.ant-radio-button-checked {
+  color: #fff;
+  background: rgb(2, 2, 65);
+  border: none !important;
+  &:hover {
+    background: rgb(2, 2, 65);
+  }
+}
