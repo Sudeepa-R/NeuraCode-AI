@@ -46,7 +46,7 @@ const DashboardFooter = (props: any) => {
               <img
                 src={logo}
                 alt=""
-                style={{ width: "300px", height: "80px" }}
+                className="footerLogo"
               />
             </strong>
             <span style={{ fontSize: "1rem", marginTop: "10px" }}>

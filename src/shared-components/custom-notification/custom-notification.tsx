@@ -9,7 +9,7 @@ import {
 type NoticeType = "info" | "warning" | "error" | "success";
 
 export const OpenNotificationWithIcon = (msgType: NoticeType, msg: string) => {
-    console.log('object,',msgType)
+  console.log("object,", msgType);
   const clr =
     msgType === "error"
       ? "#FF4D4F"
@@ -19,6 +19,15 @@ export const OpenNotificationWithIcon = (msgType: NoticeType, msg: string) => {
       ? "#FAAD14"
       : "#1677FF";
 
+  const bgClr =
+    msgType === "error"
+      ? "#FFF2F0"
+      : msgType === "success"
+      ? "#F6FFED"
+      : msgType === "warning"
+      ? "#FFFBE6"
+      : "#E6F4FF";
+
   const iconMap = {
     error: <CloseCircleFilled style={{ color: clr }} />,
     success: <CheckCircleFilled style={{ color: clr }} />,
@@ -26,11 +35,13 @@ export const OpenNotificationWithIcon = (msgType: NoticeType, msg: string) => {
     info: <InfoCircleFilled style={{ color: clr }} />,
   };
 
-  notification['open']({
-    message: <h5 style={{color:clr}}>{msg}</h5>,
-    icon: iconMap[msgType], // Corrected icon selection
-    style: { color: clr },
-    duration: 2,
-    showProgress:true
+  notification["open"]({
+    message: (
+      <p style={{ color: '#000000', fontWeight: "700", fontSize: "20px" }}>{msg}</p>
+    ),
+    icon: iconMap[msgType], 
+    style: { color: clr, background: bgClr },
+    duration: 3,
+    showProgress: true,
   });
 };
