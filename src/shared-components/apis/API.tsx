@@ -1,10 +1,14 @@
 import axios from "axios";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const baseURL = import.meta.env.VITE_BACKEND_URL;
+const token = cookies.get("tokens");
 const api = axios.create({
   baseURL: baseURL,
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
   },
 });
 

@@ -10,6 +10,8 @@ import ContactUsPage from "../../dashboard/contact/ContactUs";
 import Template from "../../dashboard/Template";
 import CodeConverterIndex from "../../pages/modules/code-converter-page";
 import CodeConverterContent from "../../pages/modules/code-converter-page/code-converter-content";
+import AppMenus from "../../pages/modules/admin-section/app-menus/app-menu";
+import ProtectedRoute from "../protected-rotes/ProtectedRoute";
 
 const LayoutWrapper = () => {
   return (
@@ -43,9 +45,11 @@ const AppRoutes = () => {
         <Route index element={<Template />} />
         <Route path="/home" element={<Template />} />
       </Route>
-
-      <Route element={<CodeConverterPageWrapper />}>
-        <Route path="/codeconverter" element={<CodeConverterContent />} />
+      <Route element={<ProtectedRoute allowedRoles="admin" />}>
+        <Route element={<CodeConverterPageWrapper />}>
+          <Route path="/codeconverter" element={<CodeConverterContent />} />
+          <Route path="/AppMenu" element={<AppMenus />} />
+        </Route>
       </Route>
     </Routes>
   );
