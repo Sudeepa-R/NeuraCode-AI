@@ -10,7 +10,7 @@ const ProtectedRoute = (props: any) => {
   }
 
   if (!(props.allowedRoles === savedUser?.user?.role)) {
-    OpenNotificationWithIcon("warning", "Access Denied!");
+    OpenNotificationWithIcon("error", "Access Denied. Please Login");
     return <Navigate to="/home" replace />;
   }
 

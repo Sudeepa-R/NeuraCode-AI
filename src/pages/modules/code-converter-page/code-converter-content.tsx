@@ -6,6 +6,7 @@ import { Button, Col, Radio, Row } from "antd";
 import type { RadioChangeEvent } from "antd";
 import Editor from "@monaco-editor/react";
 import { SunFilled, MoonFilled } from "@ant-design/icons";
+import Loader from "../../../shared-components/loader/custom-loader";
 // import { motion } from "framer-motion";
 // import { useNavigate } from "react-router-dom";
 
@@ -126,6 +127,7 @@ const CodeConverterContent = (props: any) => {
             <Editor
               width="95%"
               height="500px"
+              loading={<Loader />}
               defaultLanguage="python"
               // language={LanguagesAllowed}
               theme={theme}
@@ -135,6 +137,7 @@ const CodeConverterContent = (props: any) => {
                 minimap: { enabled: true },
               }}
               defaultValue="// Type your code here..."
+              className="codeEditor"
             />
           </Col>
           <Col
@@ -154,6 +157,7 @@ const CodeConverterContent = (props: any) => {
             <Editor
               height="500px"
               width="95%"
+              loading={<Loader />}
               options={{
                 fontSize: 18,
                 lineNumbers: "on",

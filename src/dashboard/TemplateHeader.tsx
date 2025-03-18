@@ -37,7 +37,7 @@ const TemplateHeader = (props: any) => {
   };
 
   return (
-    <div className="headerPage" style={{ backgroundColor: `${props.bgColor}` }}>
+    <div className="headerPage" style={{ backgroundColor: `${props.bgColor}`, padding:"0",margin:"0" }}>
       <span
         style={{ fontWeight: "800", fontSize: "2rem", fontFamily: "Roboto" }}
       >
@@ -102,7 +102,7 @@ const TemplateHeader = (props: any) => {
               cursor: "pointer",
             }}
           >
-            <Button type="primary">Try for free!</Button>
+            <Button type="primary" onClick={()=>{navigate('/login')}}>Try for free!</Button>
           </motion.button>
         </div>
         <span className="mobileMenuVisible">
@@ -165,7 +165,7 @@ const TemplateHeader = (props: any) => {
                   }}
                 />
                 <Button
-                  style={{ background: "#fff" }}
+                  style={{ background: "#fff", margin:"5px" }}
                   className="mobileViewButton ms-4 mt-2"
                   variant="text"
                   onClick={() => {
