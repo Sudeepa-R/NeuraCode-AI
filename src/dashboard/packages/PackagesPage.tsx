@@ -105,7 +105,6 @@ const PackagesPage = () => {
                 alignItems: "center",
                 flexDirection: "column",
                 flexWrap: "wrap",
-                marginRight: "80px",
               }}
               xs={24}
               sm={24}
@@ -115,9 +114,11 @@ const PackagesPage = () => {
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "space-between",
+                  justifyContent:"center",
+                  alignItems:'center',
                   flexWrap: "wrap",
                   width: "70%",
+                  gap:50
                 }}
               >
                 {cardData &&

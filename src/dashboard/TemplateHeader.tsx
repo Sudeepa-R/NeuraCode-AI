@@ -37,7 +37,7 @@ const TemplateHeader = (props: any) => {
   };
 
   return (
-    <div className="headerPage" style={{ backgroundColor: `${props.bgColor}` }}>
+    <div className="headerPage" style={{ backgroundColor: `${props.bgColor}`, padding:"0",margin:"0" }}>
       <span
         style={{ fontWeight: "800", fontSize: "2rem", fontFamily: "Roboto" }}
       >
