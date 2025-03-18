@@ -10,7 +10,9 @@ import { useEffect, useState } from "react";
 import NCAApis from "../../../shared-components/apis/NeuracodeAIApis";
 import { OpenNotificationWithIcon } from "../../../shared-components/custom-notification/custom-notification";
 import { openMessagesWithIcon } from "../../../shared-components/custom-messages/custom-messages";
+import { DoubleLeftOutlined } from "@ant-design/icons";
 import Cookies from "universal-cookie";
+import { goBack } from "../../../shared-components/utils/helper-functions";
 const cookies = new Cookies();
 const { loginUser } = NCAApis;
 
@@ -35,14 +37,14 @@ const Login = (props: any) => {
     setTimeout(() => {
       loginUser(data)
         .then((res: any) => {
-          console.log(11111111111111111111, res);
           SetLoading(false);
           if (res.status === 200 || res.status === 201) {
-            console.log(3333333333333, loading);
             openMessagesWithIcon("success", res?.data.message, loading);
             const data = res?.data;
             let d = new Date();
-            d.setTime(d.getTime() + 550000 * 60 * 1000);
+            d.setTime(
+              d.getTime() + import.meta.env.VITE_TOKEN_EXPIRY_TIME_IN_HRS || 2
+            );
             cookies.set("tokens", res.data.access_token, {
               path: "/",
               expires: d,
@@ -93,6 +95,18 @@ const Login = (props: any) => {
           md={24}
           lg={24}
         >
+          <div style={{ width: "100%" }}>
+            <Button
+              style={{ background: "transparent" }}
+              color="cyan"
+              variant="text"
+              onClick={() => {
+                goBack();
+              }}
+            >
+              <DoubleLeftOutlined /> Back
+            </Button>
+          </div>
           <img src={logo} alt="" style={{ height: "60px", margin: "10px" }} />
           <p style={{ textAlign: "center", fontSize: "18px" }}>
             {" "}

@@ -102,7 +102,7 @@ const TemplateHeader = (props: any) => {
               cursor: "pointer",
             }}
           >
-            <Button type="primary">Try for free!</Button>
+            <Button type="primary" onClick={()=>{navigate('/login')}}>Try for free!</Button>
           </motion.button>
         </div>
         <span className="mobileMenuVisible">
@@ -165,7 +165,7 @@ const TemplateHeader = (props: any) => {
                   }}
                 />
                 <Button
-                  style={{ background: "#fff" }}
+                  style={{ background: "#fff", margin:"5px" }}
                   className="mobileViewButton ms-4 mt-2"
                   variant="text"
                   onClick={() => {

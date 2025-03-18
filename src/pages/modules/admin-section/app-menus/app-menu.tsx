@@ -129,7 +129,7 @@ const AppMenus = () => {
             </Button>
           </div>
           <Table
-            style={{ width: "90%", background: "#fff" }}
+            style={{ width: "90%", background: "#fff", padding:'1%' }}
             columns={columns}
             dataSource={data}
             onChange={handlePagination}

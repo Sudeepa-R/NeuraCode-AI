@@ -58,7 +58,7 @@ const PackagesPage = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Button onClick={()=>{navigate('*')}} type="primary">Try for free!</Button>
+                  <Button onClick={()=>{navigate('/login')}} type="primary">Try for free!</Button>
                 </motion.button>
               </Col>
             </Row>

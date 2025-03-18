@@ -58,7 +58,7 @@ const ContactUsPage = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Button onClick={()=>{navigate('*')}} type="primary">Try NeuraCode AI</Button>
+                  <Button onClick={()=>{navigate('/login')}} type="primary">Try NeuraCode AI</Button>
                 </motion.button>
               </Col>
             </Row>

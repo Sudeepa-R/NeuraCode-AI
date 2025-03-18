@@ -20,7 +20,7 @@ import { SetmobileMenuViewActive } from "../shared-components/react-redux-store/
 import { useNavigate } from "react-router-dom";
 
 const DashboardTemplate = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const socialLinks = [
     {
       id: 1,
@@ -172,7 +172,9 @@ const DashboardTemplate = () => {
                 className="tryButton"
                 style={{ backgroundColor: "#cadcfc" }}
                 variant="filled"
-                onClick={()=>{navigate('*')}}
+                onClick={() => {
+                  navigate("/login");
+                }}
               >
                 Try for free!
               </Button>
@@ -461,7 +463,14 @@ const DashboardTemplate = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <Button onClick={()=>{navigate('*')}} type="primary">Try for free!</Button>
+                  <Button
+                    onClick={() => {
+                      navigate("/login");
+                    }}
+                    type="primary"
+                  >
+                    Try for free!
+                  </Button>
                 </motion.button>
               </span>
             </span>
@@ -566,7 +575,8 @@ const mapStateToProps = (state: any) => ({
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  SetmobileMenuViewActive: (data: boolean) => dispatch(SetmobileMenuViewActive(data)),
+  SetmobileMenuViewActive: (data: boolean) =>
+    dispatch(SetmobileMenuViewActive(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DashboardTemplate);
