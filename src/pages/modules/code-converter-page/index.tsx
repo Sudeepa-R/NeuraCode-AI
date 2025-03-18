@@ -3,7 +3,7 @@ import MainHeader from "../main-header/main-header";
 
 const CodeConverterIndex = (props: any) => {
 
-  const [bgColor, setBgColor] = useState("transparent");
+  const [bgColor, setBgColor] = useState("#fff");
       
         useEffect(() => {
           const handleScroll = () => {
@@ -11,7 +11,7 @@ const CodeConverterIndex = (props: any) => {
             if (scrollHeight > 40) {
               setBgColor("#fff");
             } else {
-              setBgColor("transparent");
+              setBgColor("#fff");
             }
           };
       

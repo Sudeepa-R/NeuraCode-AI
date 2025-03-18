@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import { SetActivePageKey } from "../../../shared-components/react-redux-store/Store";
 import { useNavigate } from "react-router-dom";
 import "./main-header.scss";
+import { LogoutSession } from "../../../shared-components/utils/helper-functions";
 
 const MainHeader = (props: any) => {
   // const [collapsed, Setcollapsed] = useState(false);
@@ -48,9 +49,16 @@ const MainHeader = (props: any) => {
       navigate: "/packages",
       danger: true,
       icon: <LogoutOutlined />,
+      onClick: () => {
+        handleLogout();
+      },
     },
   ];
-
+  const handleLogout = () => {
+    LogoutSession();
+    navigate('/home')
+    console.log("clicked");
+  };
   const menuItems = [
     { key: "convert-code", label: "Convert Code", navigate: "/codeconverter" },
     { key: "runCode", label: "Run Code", navigate: "*" },
@@ -89,7 +97,9 @@ const MainHeader = (props: any) => {
     const user = localStorage.getItem("data");
     const data = JSON.parse(user || "{}");
     const userName = data?.user?.userName;
-    const email = data?.user?.userEmail ? (data?.user?.userEmail).split("@"): 'Not found';
+    const email = data?.user?.userEmail
+      ? (data?.user?.userEmail).split("@")
+      : "Not found";
     SetuserData({
       userName: userName,
       email: data?.user?.userEmail,
@@ -130,6 +140,7 @@ const MainHeader = (props: any) => {
               margin: "0 20px",
               cursor: "pointer",
               color: `${current === item.key ? "#00246B" : ""}`,
+              fontSize:"20px"
             }}
           >
             {item.label}
@@ -148,7 +159,7 @@ const MainHeader = (props: any) => {
       </nav>
 
       <div className="profileDropdown" style={{ width: "20%" }}>
-        <Dropdown  className="profile" menu={{ items }}>
+        <Dropdown className="profile" menu={{ items }}>
           <Space style={{ cursor: "pointer" }}>
             <Avatar
               style={{ backgroundColor: "#87d068" }}
@@ -156,7 +167,9 @@ const MainHeader = (props: any) => {
               // size="large"
               icon={<UserOutlined />}
             />
-            <span style={{fontSize:"18px"}}>{userData.userName || userData.emailName}</span>
+            <span style={{ fontSize: "18px" }}>
+              {userData.userName || userData.emailName}
+            </span>
           </Space>
         </Dropdown>
         <span className="secondHeader">
