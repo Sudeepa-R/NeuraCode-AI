@@ -1,6 +1,11 @@
-import { Button, Table, TableColumnsType, 
-  // TableProps, 
-  Tag } from "antd";
+import {
+  Button,
+  Modal,
+  Table,
+  TableColumnsType,
+  // TableProps,
+  Tag,
+} from "antd";
 import "./app-menus.scss";
 import { useEffect, useState } from "react";
 import NCAApis from "../../../../shared-components/apis/NeuracodeAIApis";
@@ -17,6 +22,7 @@ interface DataType {
 
 const AppMenus = () => {
   const [data, SetData] = useState([]);
+  const [open, SetOpen] = useState(false);
   useEffect(() => {
     fetch();
   }, []);
@@ -30,7 +36,7 @@ const AppMenus = () => {
         }
       })
       .catch((e) => {
-        OpenNotificationWithIcon('error',e?.response?.data.message)
+        OpenNotificationWithIcon("error", e?.response?.data.message);
         console.log(2222, e);
       });
   };
@@ -46,27 +52,27 @@ const AppMenus = () => {
       dataIndex: "menuId",
       defaultSortOrder: "descend",
       sorter: (a, b) => a.age - b.age,
-      width:"10%"
+      width: "10%",
     },
     {
       title: "Menu Title",
       dataIndex: "menu",
-      width:"10%"
+      width: "10%",
     },
     {
       title: "Menu Description",
       dataIndex: "menuDescription",
-      width:"10%"
+      width: "10%",
     },
     {
       title: "Navigate To",
       dataIndex: "navigateTo",
-      width:"10%"
+      width: "10%",
     },
     {
       title: "View For",
       dataIndex: "viewFor",
-      width:"10%",
+      width: "10%",
       render: (viewFor) => {
         let color = viewFor === "admin" ? "geekblue" : "green";
 
@@ -80,9 +86,8 @@ const AppMenus = () => {
     {
       title: "Icon",
       dataIndex: "icon",
-      width:"10%"
+      width: "10%",
     },
-    
   ];
 
   // const onChange: TableProps<DataType>["onChange"] = (
@@ -95,7 +100,7 @@ const AppMenus = () => {
   // };
 
   const handlePagination = (data: any, sorter = {}, filter = {}) => {
-    console.log(sorter,filter)
+    console.log(sorter, filter);
     setPaginationConfig({
       ...paginationConfig,
       current: data.current,
@@ -123,13 +128,19 @@ const AppMenus = () => {
               justifyContent: "space-between",
             }}
           >
-            <h4 style={{color:"#00246B"}}>App Menus </h4>
-            <Button style={{ fontFamily: "sans-serif" }} type="primary">
+            <h4 style={{ color: "#00246B" }}>App Menus </h4>
+            <Button
+              onClick={() => {
+                SetOpen(true);
+              }}
+              style={{ fontFamily: "sans-serif" }}
+              type="primary"
+            >
               Add App Menu
             </Button>
           </div>
           <Table
-            style={{ width: "90%", background: "#fff", padding:'1%' }}
+            style={{ width: "90%", background: "#fff", padding: "1%" }}
             columns={columns}
             dataSource={data}
             onChange={handlePagination}
@@ -137,6 +148,32 @@ const AppMenus = () => {
             showSorterTooltip={{ target: "sorter-icon" }}
             scroll={{ x: 900, y: 360 }}
           />
+
+          <Modal
+            title="Add/Update the form"
+            open={open}
+            footer={[
+              <Button
+                key="back"
+                onClick={() => {
+                  SetOpen(false);
+                }}
+              >
+                Cancel
+              </Button>,
+              <Button
+                key="submit"
+                type="primary"
+                // loading={loading}
+                // onClick={handleOk}
+              >
+                Submit
+              </Button>,
+            ]}
+            // confirmLoading={confirmLoading}
+          >
+            <p>hi</p>
+          </Modal>
         </div>
       </div>
     </>

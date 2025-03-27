@@ -40,7 +40,7 @@ const DashboardFooter = (props: any) => {
   return (
     <>
       <Row style={{ padding: "30px" }} className="templateFooter">
-        <Col xs={24} sm={24} md={12} lg={6}>
+        <Col className="commonFont" xs={24} sm={24} md={12} lg={6}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <strong style={{ fontSize: "1.75rem" }}>
               <img

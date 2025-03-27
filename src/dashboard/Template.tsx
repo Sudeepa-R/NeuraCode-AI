@@ -126,6 +126,7 @@ const DashboardTemplate = () => {
           }}
         >
           <Col
+          className="commonFont"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -206,6 +207,7 @@ const DashboardTemplate = () => {
           }}
         >
           <Col
+          className="commonFont"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -294,6 +296,7 @@ const DashboardTemplate = () => {
             </motion.h1>
           </Col>
           <Col
+          className="commonFont"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -484,7 +487,7 @@ const DashboardTemplate = () => {
             minHeight: "80vh",
           }}
         >
-          <Col xs={24} sm={24} md={24} lg={24}>
+          <Col className="commonFont" xs={24} sm={24} md={24} lg={24}>
             <span
               style={{
                 width: "100%",

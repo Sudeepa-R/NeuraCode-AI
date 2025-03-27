@@ -21,6 +21,7 @@ const ContactUsPage = () => {
               }}
             >
               <Col
+              className="commonFont"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -99,6 +100,7 @@ const ContactUsPage = () => {
               </p>
             </div>
             <Col
+            className="commonFont"
               style={{
                 display: "flex",
                 justifyContent: "center",
