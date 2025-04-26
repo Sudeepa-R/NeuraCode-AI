@@ -140,7 +140,7 @@ const MainHeader = (props: any) => {
               margin: "0 20px",
               cursor: "pointer",
               color: `${current === item.key ? "#00246B" : ""}`,
-              fontSize:"20px"
+              fontSize:"18px"
             }}
           >
             {item.label}

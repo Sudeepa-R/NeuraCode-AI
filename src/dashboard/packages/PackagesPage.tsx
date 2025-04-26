@@ -21,6 +21,7 @@ const PackagesPage = () => {
               }}
             >
               <Col
+              className="commonFont"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -99,6 +100,7 @@ const PackagesPage = () => {
               </p>
             </div>
             <Col
+            className="commonFont"
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -125,6 +127,7 @@ const PackagesPage = () => {
                   cardData.map((data, index) => (
                     <Badge.Ribbon text={data.badge} key={index}>
                       <Card
+                      className="commonFont"
                         hoverable
                         title={
                           <div

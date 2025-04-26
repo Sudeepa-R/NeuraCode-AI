@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import DashboardFooter from "./dashboard-footer";
 import TemplateHeader from "./TemplateHeader";
-import { LogoutSession } from "../shared-components/utils/helper-functions";
+// import { LogoutSession } from "../shared-components/utils/helper-functions";
 
 const DashboardMainPage = (props: any) => {
      const [bgColor, setBgColor] = useState("transparent");
     
       useEffect(() => {
-        LogoutSession()
+        // LogoutSession()
         const handleScroll = () => {
           const scrollHeight = window.scrollY;
           if (scrollHeight > 40) {
