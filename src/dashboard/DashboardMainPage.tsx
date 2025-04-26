@@ -7,7 +7,7 @@ const DashboardMainPage = (props: any) => {
      const [bgColor, setBgColor] = useState("transparent");
     
       useEffect(() => {
-        LogoutSession()
+        // LogoutSession()
         const handleScroll = () => {
           const scrollHeight = window.scrollY;
           if (scrollHeight > 40) {

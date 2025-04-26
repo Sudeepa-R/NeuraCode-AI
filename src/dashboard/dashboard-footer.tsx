@@ -58,7 +58,7 @@ const DashboardFooter = (props: any) => {
 
         <Col xs={24} sm={24} md={6} lg={6}>
           <div>
-            <strong style={{ fontSize: "1.75rem" }}>Company</strong>
+            <strong style={{ fontSize: "1.75rem" }}>Quick Links</strong>
 
             <Menu
               onClick={onClick}

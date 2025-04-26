@@ -10,6 +10,7 @@ import "./app-menus.scss";
 import { useEffect, useState } from "react";
 import NCAApis from "../../../../shared-components/apis/NeuracodeAIApis";
 import { OpenNotificationWithIcon } from "../../../../shared-components/custom-notification/custom-notification";
+import AppMenuForm from "./app-menu-form";
 
 const { getAppMenus } = NCAApis;
 
@@ -151,6 +152,10 @@ const AppMenus = () => {
 
           <Modal
             title="Add/Update the form"
+            centered
+            onCancel={() => {
+              SetOpen(false);
+            }}
             open={open}
             footer={[
               <Button
@@ -160,19 +165,11 @@ const AppMenus = () => {
                 }}
               >
                 Cancel
-              </Button>,
-              <Button
-                key="submit"
-                type="primary"
-                // loading={loading}
-                // onClick={handleOk}
-              >
-                Submit
-              </Button>,
+              </Button>
             ]}
             // confirmLoading={confirmLoading}
           >
-            <p>hi</p>
+            <AppMenuForm submitType='Save' />
           </Modal>
         </div>
       </div>

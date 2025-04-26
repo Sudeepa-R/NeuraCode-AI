@@ -154,7 +154,7 @@ const ContactUsPage = () => {
                         margin: "10px",
                       }}
                     />{" "}
-                    <h5 style={{ fontWeight: "500" }}> +91 86756 45678 </h5>
+                    <h5 style={{ fontWeight: "500" }}> +91 12345 54321 </h5>
                   </span>
                 </div>
                 <div
