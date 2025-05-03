@@ -13,7 +13,10 @@ import { connect } from "react-redux";
 import { SetActivePageKey } from "../../../shared-components/react-redux-store/Store";
 import { useNavigate } from "react-router-dom";
 import "./main-header.scss";
-import { LogoutSession } from "../../../shared-components/utils/helper-functions";
+import {
+  currentUrlAssigned,
+  LogoutSession,
+} from "../../../shared-components/utils/helper-functions";
 
 const MainHeader = (props: any) => {
   // const [collapsed, Setcollapsed] = useState(false);
@@ -56,13 +59,16 @@ const MainHeader = (props: any) => {
   ];
   const handleLogout = () => {
     LogoutSession();
-    navigate('/home')
-    console.log("clicked");
+    navigate("/home");
   };
   const menuItems = [
-    { key: "convert-code", label: "Convert Code", navigate: "/codeconverter" },
+    { key: "codeconverter", label: "Convert Code", navigate: "/codeconverter" },
     { key: "runCode", label: "Run Code", navigate: "*" },
-    { key: "adminSettings", label: "Admin Settings", navigate: "*" },
+    {
+      key: "admin-settings",
+      label: "Admin Settings",
+      navigate: "/admin-settings",
+    },
   ];
   // const handleClick = (key: string, navigateTo: string) => {
   //   window.scrollTo(0, 0);
@@ -73,11 +79,16 @@ const MainHeader = (props: any) => {
   // };
 
   useEffect(() => {
-    props.SetActivePageKey("convert-code");
-    setCurrent("convert-code");
+    props.SetActivePageKey(handleUrlAssigned());
+    setCurrent(handleUrlAssigned());
     setUserProfileName();
   }, []);
 
+  const handleUrlAssigned = () => {
+    const url = currentUrlAssigned();
+    console.log("urlOnAssigned----", url);
+    return url;
+  };
   useEffect(() => {
     setCurrent(props.activepageKey);
   }, [props.activepageKey]);
@@ -88,7 +99,8 @@ const MainHeader = (props: any) => {
   //   Setcollapsed(false);
   // };
   const handleNavigateFunction = (key: string) => {
-    navigate(key);
+    const menu = menuItems.find((i) => i.key === key) || menuItems[0];
+    navigate(menu.navigate);
     props.SetActivePageKey(key);
     Setcollapsed(false);
   };
@@ -140,7 +152,7 @@ const MainHeader = (props: any) => {
               margin: "0 20px",
               cursor: "pointer",
               color: `${current === item.key ? "#00246B" : ""}`,
-              fontSize:"18px"
+              fontSize: "18px",
             }}
           >
             {item.label}
