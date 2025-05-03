@@ -12,6 +12,14 @@ import CodeConverterIndex from "../../pages/modules/code-converter-page";
 import CodeConverterContent from "../../pages/modules/code-converter-page/code-converter-content";
 import AppMenus from "../../pages/modules/admin-section/app-menus/app-menu";
 import ProtectedRoute from "../protected-rotes/ProtectedRoute";
+import AdminSettingsIndex from "../../pages/modules/admin-section";
+import { useEffect } from "react";
+import { checkTheToken } from "../utils/helper-functions";
+// import { use, useEffect } from "react";
+// import { checkTheToken } from "../utils/helper-functions";
+import { useNavigate } from "react-router-dom";
+
+
 
 const LayoutWrapper = () => {
   return (
@@ -30,6 +38,12 @@ const CodeConverterPageWrapper = () => {
 };
 
 const AppRoutes = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!checkTheToken()) {
+      navigate("/login");
+    }
+  }, []);
   return (
     <Routes>
       {/* <Route index path="/" element={<Dashboard />} />
@@ -49,6 +63,7 @@ const AppRoutes = () => {
         <Route element={<CodeConverterPageWrapper />}>
           <Route path="/codeconverter" element={<CodeConverterContent />} />
           <Route path="/AppMenu" element={<AppMenus />} />
+          <Route path="/admin-settings" element={<AdminSettingsIndex />} />
         </Route>
       </Route>
     </Routes>

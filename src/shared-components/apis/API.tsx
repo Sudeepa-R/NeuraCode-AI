@@ -44,9 +44,9 @@ export const put = async (endPoint: string, data: any) => {
   }
 };
 
-export const _delete = async (endPoint: string, data: any) => {
+export const _delete = async (endPoint: string) => {
   try {
-    return await api.put(`${baseURL}/${endPoint}`, data);
+    return await api.delete(`${baseURL}/${endPoint}`);
   } catch (err) {
     throw err;
   }

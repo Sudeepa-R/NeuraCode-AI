@@ -148,7 +148,7 @@ const Login = (props: any) => {
                   { required: true, message: "Please input your password!" },
                 ]}
               >
-                <Input
+                <Input.Password 
                   allowClear
                   onChange={(data) => {
                     SetPassword(data.target.value);

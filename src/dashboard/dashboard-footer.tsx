@@ -31,8 +31,16 @@ const items = [
 
 const DashboardFooter = (props: any) => {
   const navigate = useNavigate();
+
+  const socialMediaLinks = (id: number) => {
+    const item = socialLinks.find((item) => item.id === id);
+    if (item) {
+      window.location.href = item.link;
+    }
+  };
+
   const onClick: MenuProps["onClick"] = (e: any) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate(e.key);
     props.SetActivePageKey(e.key);
   };
@@ -43,11 +51,7 @@ const DashboardFooter = (props: any) => {
         <Col className="commonFont" xs={24} sm={24} md={12} lg={6}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <strong style={{ fontSize: "1.75rem" }}>
-              <img
-                src={logo}
-                alt=""
-                className="footerLogo"
-              />
+              <img src={logo} alt="" className="footerLogo" />
             </strong>
             <span style={{ fontSize: "1rem", marginTop: "10px" }}>
               NeuraCode AI simplifies code conversion with accuracy and
@@ -92,6 +96,9 @@ const DashboardFooter = (props: any) => {
                     key={id}
                     whileHover={{ scale: 1.2, y: -5, color: "#00246b" }}
                     transition={{ type: "spring", stiffness: 300 }}
+                    onClick={() => {
+                      socialMediaLinks(id);
+                    }}
                   >
                     {icon}
                   </motion.h3>
