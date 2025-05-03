@@ -6,9 +6,9 @@ $primary-color: #00246b;
 $secondary-color: #cadcfc;
 $third-color: #f9eded;
 
-* {
-  font-family: "Roboto Mono ";
-}
+// * {
+//   font-family: "Roboto Mono ";
+// }
 
 h1 {
   font-size: $font-size-mainHeading;
@@ -86,4 +86,7 @@ p {
 }
 .ant-drawer-content-wrapper{
   width: 150px !important;
+}
+.commonFont{
+  font-family: "Roboto Mono" !important;
 }
