@@ -19,8 +19,6 @@ import { checkTheToken } from "../utils/helper-functions";
 // import { checkTheToken } from "../utils/helper-functions";
 import { useNavigate } from "react-router-dom";
 
-
-
 const LayoutWrapper = () => {
   return (
     <DashboardMainPage>
@@ -30,6 +28,13 @@ const LayoutWrapper = () => {
 };
 
 const CodeConverterPageWrapper = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!checkTheToken()) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <CodeConverterIndex>
       <Outlet />
@@ -38,12 +43,6 @@ const CodeConverterPageWrapper = () => {
 };
 
 const AppRoutes = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!checkTheToken()) {
-      navigate("/login");
-    }
-  }, []);
   return (
     <Routes>
       {/* <Route index path="/" element={<Dashboard />} />
