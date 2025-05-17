@@ -1,0 +1,9 @@
+@use "../../../../assets/styles/index.scss" as *;
+
+.mainContent {
+  width: 100%;
+  margin-top: 80px;
+  padding: 30px;
+  background: linear-gradient(90deg, $secondary-color, #fff);
+  min-height: 100vh;
+}
