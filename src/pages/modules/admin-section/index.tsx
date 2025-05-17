@@ -3,9 +3,9 @@ import { Card, Row, Col, Spin, Typography } from "antd";
 import "./admin-settibgs.scss";
 import {
   SettingOutlined,
-  UserOutlined,
+  BarsOutlined,
   DashboardOutlined,
-  FileTextOutlined,
+  CodeOutlined,
 } from "@ant-design/icons";
 import type { ComponentType } from "react";
 import NCAApis from "../../../shared-components/apis/NeuracodeAIApis";
@@ -16,56 +16,25 @@ const { getAppMenus } = NCAApis;
 
 const { Title } = Typography;
 
-// Dummy data for admin settings
-const dummySettings = [
-  {
-    id: "1",
-    menuId: 1,
-    menuTitle: "User Management",
-    navigateTo: "/admin/users",
-    menuDescription: "Manage user accounts and permissions",
-    icon: "user",
-    viewFor: "Admin",
-  },
-  {
-    id: "2",
-    menuId: 2,
-    menuTitle: "App Menu",
-    navigateTo: "/appMenu",
-    menuDescription: "Configure system-wide settings",
-    icon: "setting",
-    viewFor: "Super Admin",
-  },
-  {
-    id: "3",
-    menuId: 3,
-    menuTitle: "Dashboard",
-    navigateTo: "/admin/dashboard",
-    menuDescription: "View system analytics and metrics",
-    icon: "dashboard",
-    viewFor: "Admin",
-  },
-  {
-    id: "4",
-    menuId: 4,
-    menuTitle: "Reports",
-    navigateTo: "/admin/reports",
-    menuDescription: "Generate and view reports",
-    icon: "file-text",
-    viewFor: "Manager",
-  },
-];
+type CardsData = {
+  id: string;
+  menuId: number;
+  menuTitle: string;
+  navigateTo: string;
+  menuDescription: string;
+  icon: string;
+  viewFor: string;
+};
 
-// Define the icon mapping with proper typing
 const iconMap: Record<string, ComponentType> = {
   setting: SettingOutlined,
-  user: UserOutlined,
+  BarsOutlined: BarsOutlined,
   dashboard: DashboardOutlined,
-  "file-text": FileTextOutlined,
+  CodeOutlined: CodeOutlined,
 };
 
 const AdminSettingsIndex = () => {
-  const [settings, setSettings] = useState(dummySettings);
+  const [settings, setSettings] = useState<CardsData[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -97,7 +66,7 @@ const AdminSettingsIndex = () => {
         <Title style={{ color: "#36454F" }} level={2}>
           Welcome to Admin Settings
         </Title>
-        <p style={{ color: "#000000", fontSize: "19px" }}>
+        <p style={{ color: "#000000", fontSize: "17px" }}>
           The Admin Settings page centralizes essential controls for user
           management, security settings, system customization, and operational
           maintenance.
@@ -139,7 +108,7 @@ const AdminSettingsIndex = () => {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        fontSize: "2rem",
+                        fontSize: "1rem",
                         margin: "5px 0",
                       }}
                     >
@@ -159,7 +128,7 @@ const AdminSettingsIndex = () => {
                       <p
                         style={{
                           color: "#888",
-                          fontSize: "16px",
+                          fontSize: "14px",
                           textAlign: "center",
                         }}
                       >

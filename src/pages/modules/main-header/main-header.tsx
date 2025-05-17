@@ -87,6 +87,10 @@ const MainHeader = (props: any) => {
   const handleUrlAssigned = () => {
     const url = currentUrlAssigned();
     console.log("urlOnAssigned----", url);
+    const adminUrls=['AppMenu','ProgrammingLanguages']
+    if(adminUrls.includes(url)){
+      return 'admin-settings'
+    }
     return url;
   };
   useEffect(() => {
