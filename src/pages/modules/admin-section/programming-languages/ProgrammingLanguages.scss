@@ -1,0 +1,45 @@
+@use "../../../../assets/styles/index.scss" as *;
+
+.mainContent {
+  width: 100%;
+  margin-top: 80px;
+  padding: 30px;
+  // background: linear-gradient(90deg, $secondary-color, #fff);
+  background: $secondary-color;
+  min-height: 88vh;
+
+  & .ant-card .ant-card-cover {
+    width: 90% !important;
+  }
+
+  & .hoverable:hover {
+    box-shadow: 1px 1px 10px rgb(88, 87, 87);
+  }
+
+  .rightSectionUploadImg {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+
+    .ant-upload-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.rightSectionUploadImg {
+  .ant-upload {
+    margin-bottom: 16px;
+  }
+  .ant-image {
+    display: inline-block;
+  }
+  .ant-image-img {
+    display: block !important;
+  }
+}

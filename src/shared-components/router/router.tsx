@@ -18,6 +18,7 @@ import { checkTheToken } from "../utils/helper-functions";
 // import { use, useEffect } from "react";
 // import { checkTheToken } from "../utils/helper-functions";
 import { useNavigate } from "react-router-dom";
+import ProgrammingLanguages from "../../pages/modules/admin-section/programming-languages/programming-languages";
 
 const LayoutWrapper = () => {
   return (
@@ -62,6 +63,10 @@ const AppRoutes = () => {
         <Route element={<CodeConverterPageWrapper />}>
           <Route path="/codeconverter" element={<CodeConverterContent />} />
           <Route path="/AppMenu" element={<AppMenus />} />
+          <Route
+            path="/ProgrammingLanguages"
+            element={<ProgrammingLanguages />}
+          />
           <Route path="/admin-settings" element={<AdminSettingsIndex />} />
         </Route>
       </Route>
