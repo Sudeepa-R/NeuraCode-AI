@@ -48,6 +48,11 @@ const ProgrammingLanguages = () => {
 
   const saveData = (data: any) => {
     SetLoading(true);
+    if (imgUrl.length <= 0) {
+      SetLoading(false);
+      OpenNotificationWithIcon("error", "Please upload the image");
+      return;
+    }
     const _Data = { plName: data.plName, imgUrl: imgUrl, plId: languageID };
     savePLData(_Data)
       .then((res) => {
@@ -173,6 +178,7 @@ const ProgrammingLanguages = () => {
   };
 
   const handleDelete = () => {
+    SetImage("");
     SeteditEnabled(false);
     setFileList([]);
     setPreviewUrl(null);
