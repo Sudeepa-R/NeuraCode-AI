@@ -37,7 +37,7 @@ export const OpenNotificationWithIcon = (msgType: NoticeType, msg: string) => {
 
   notification["open"]({
     message: (
-      <p style={{ color: '#000000', fontWeight: "700", fontSize: "20px" }}>{msg}</p>
+      <p style={{ color: '#000000', fontWeight: "700", fontSize: "15px" }}>{msg}</p>
     ),
     icon: iconMap[msgType], 
     style: { color: clr, background: bgClr },

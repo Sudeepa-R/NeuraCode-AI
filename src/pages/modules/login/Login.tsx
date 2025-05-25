@@ -31,7 +31,6 @@ const Login = (props: any) => {
 
   const validateUserCredentials = () => {
     SetLoading(true);
-    console.log(2222222222, loading);
     openMessagesWithIcon("info", "", true);
     const data = { userEmail: userEmail, password: password };
     setTimeout(() => {
