@@ -6,7 +6,7 @@ export const openMessagesWithIcon = (
   
   msgType: NoticeType,
   msg: string='',
-  isLoading: boolean
+  isLoading: boolean=false
 ) => {
   const key = "updatable";
 console.log('loading',isLoading)
